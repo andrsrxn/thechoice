@@ -1,15 +1,10 @@
-import { Geist, Geist_Mono, Inter } from "next/font/google"
+import { baseMetadata, baseViewport } from '@/lib/constants/metadata'
+import './globals.css'
+import { fontBody, fontHeading } from '@/lib/fonts'
+import { cn } from '@/lib/utils'
 
-import "./globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
-import { cn } from "@/lib/utils";
-
-const inter = Inter({subsets:['latin'],variable:'--font-sans'})
-
-const fontMono = Geist_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-})
+export const metadata = baseMetadata
+export const viewport = baseViewport
 
 export default function RootLayout({
   children,
@@ -18,13 +13,10 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang='es'
       suppressHydrationWarning
-      className={cn("antialiased", fontMono.variable, "font-sans", inter.variable)}
-    >
-      <body>
-        <ThemeProvider>{children}</ThemeProvider>
-      </body>
+      className={cn('font-body antialiased', fontBody.variable, fontHeading.variable)}>
+      <body className='isolate'>{children}</body>
     </html>
   )
 }

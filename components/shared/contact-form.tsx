@@ -137,11 +137,11 @@ export const ContactForm = () => {
                       </InputGroupText>
                     </InputGroupAddon>
                   </InputGroup>
+                  {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
                   <FieldDescription className='mt-2! block'>
                     <strong>Nota:</strong> Esta es una demo, el mensaje no se enviará al
                     restaurante.
                   </FieldDescription>
-                  {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
                 </Field>
               )}
             />

@@ -10,7 +10,6 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { IMAGES } from '@/lib/constants/paths'
 
 export default function Page() {
-
   preload(IMAGES.BACKGROUNDS.NATURE.URL, {
     as: 'image',
     fetchPriority: 'high',
@@ -78,7 +77,10 @@ export default function Page() {
             </Link>
           </InView>
           <InView inViewClassName='animate-fade-in-up animate-duration-500 animate-ease-in-out'>
-            <Link prefetch={false} href={'/menu'} className='group relative block bg-black'>
+            <Link
+              prefetch={false}
+              href={'/menu?tipo=postres'}
+              className='group relative block bg-black'>
               <div className='h-[400px] overflow-hidden laptop:h-[450px] desktop:h-[570px]'>
                 <img
                   src={IMAGES.PRODUCTS.DESSERT.URL}
@@ -116,7 +118,7 @@ export default function Page() {
           <Card className='sticky top-20 animate-zoom-out animate-range-[40%_100%] timeline-view-block laptop:grid laptop:grid-cols-2 desktop:py-10'>
             <div className='flex flex-col laptop:pb-1'>
               <CardHeader className='desktop:px-10'>
-                <CardTitle className='tablet:text-3xl desktop:text-4xl'>
+                <CardTitle as='h3' className='tablet:text-3xl desktop:text-4xl'>
                   Santa Lucía Milpas Altas
                 </CardTitle>
               </CardHeader>
@@ -139,7 +141,7 @@ export default function Page() {
                 <div className='flex flex-1 items-center gap-8 laptop:items-end'>
                   <Link
                     prefetch={false}
-                    href='/ubicaciones'
+                    href='/ubicaciones#santa-lucia-milpas-altas'
                     className='group flex items-center gap-1 text-base leading-none text-primary underline decoration-1 desktop:text-lg'>
                     Ver Horarios{' '}
                     <ArrowRight className='size-4 transition-transform duration-200 ease-in-out group-hover:translate-x-1' />
@@ -167,7 +169,9 @@ export default function Page() {
           <Card className='sticky top-20 animate-zoom-out animate-range-[40%_100%] timeline-view-block laptop:grid laptop:grid-cols-2 desktop:py-10'>
             <div className='flex flex-col laptop:pb-1'>
               <CardHeader className='desktop:px-10'>
-                <CardTitle className='tablet:text-3xl desktop:text-4xl'>EON Plaza</CardTitle>
+                <CardTitle as='h3' className='tablet:text-3xl desktop:text-4xl'>
+                  EON Plaza
+                </CardTitle>
               </CardHeader>
               <CardContent className='mt-2 flex h-full flex-col gap-6 desktop:px-10'>
                 <p>
@@ -188,7 +192,7 @@ export default function Page() {
                 <div className='flex flex-1 items-center gap-8 laptop:items-end'>
                   <Link
                     prefetch={false}
-                    href='/ubicaciones'
+                    href='/ubicaciones#eon-plaza'
                     className='group flex items-center gap-1 text-base leading-none text-primary underline decoration-1 desktop:text-lg'>
                     Ver Horarios{' '}
                     <ArrowRight className='size-4 transition-transform duration-200 ease-in-out group-hover:translate-x-1' />
@@ -216,7 +220,9 @@ export default function Page() {
           <Card className='sticky top-20 laptop:grid laptop:grid-cols-2 desktop:py-10'>
             <div className='flex flex-col laptop:pb-1'>
               <CardHeader className='desktop:px-10'>
-                <CardTitle className='tablet:text-3xl desktop:text-4xl'>Mateo Express</CardTitle>
+                <CardTitle as='h3' className='tablet:text-3xl desktop:text-4xl'>
+                  Mateo Express
+                </CardTitle>
               </CardHeader>
               <CardContent className='mt-2 flex h-full flex-col gap-6 desktop:px-10'>
                 <p>
@@ -237,7 +243,7 @@ export default function Page() {
                 <div className='flex flex-1 items-center gap-8 laptop:items-end'>
                   <Link
                     prefetch={false}
-                    href='/ubicaciones'
+                    href='/ubicaciones#mateo-express'
                     className='group flex items-center gap-1 text-base leading-none text-primary underline decoration-1 desktop:text-lg'>
                     Ver Horarios{' '}
                     <ArrowRight className='size-4 transition-transform duration-200 ease-in-out group-hover:translate-x-1' />

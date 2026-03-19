@@ -10,7 +10,9 @@ import { SITE } from '@/lib/constants/site'
 import { obfuscateEmail } from '@/lib/utils'
 
 export const metadata = {
-  title: 'Menú',
+  title: 'Contacto',
+  descripcion:
+    '¿Tienes dudas, sugerencias o quieres hablar con nuestro equipo? ¡Estamos para servirte!',
 }
 
 export default function MenuPage() {

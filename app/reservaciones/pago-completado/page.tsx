@@ -3,6 +3,12 @@ import { MainWrapper } from '@/components/shared/main-wrapper'
 import { SuccessForm } from '@/components/shared/success-form'
 import { IMAGES } from '@/lib/constants/paths'
 
+export const metadata = {
+  title: 'Reservado con éxito',
+  description:
+    'Gracias por tu reservación, te enviaremos un correo electrónico con los detalles de tu reservación y tu factura.',
+}
+
 export default function CompletedPage() {
   return (
     <MainWrapper>

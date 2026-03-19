@@ -21,7 +21,22 @@ import { IMAGES } from '@/lib/constants/paths'
 import { cn } from '@/lib/utils'
 
 export const metadata = {
-  title: 'Menú',
+  title: 'Nosotros',
+  description:
+    'Somos un restaurante y panadería coreana ubicado en Guatemala, comprometidos con ofrecer una experiencia culinaria auténtica y de alta calidad. Desde platillos tradicionales hasta creaciones modernas, cada bocado está diseñado para deleitar tu paladar.',
+  openGraph: {
+    title: 'Nosotros',
+    description:
+      'Somos un restaurante y panadería coreana ubicado en Guatemala, comprometidos con ofrecer una experiencia culinaria auténtica y de alta calidad. Desde platillos tradicionales hasta creaciones modernas, cada bocado está diseñado para deleitar tu paladar.',
+    images: [
+      {
+        url: IMAGES.PEOPLE.TEAM.URL,
+        width: 1200,
+        height: 630,
+        alt: IMAGES.PEOPLE.TEAM.ALT,
+      },
+    ],
+  },
 }
 
 export default function MenuPage() {

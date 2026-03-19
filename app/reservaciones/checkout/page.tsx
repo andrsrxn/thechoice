@@ -3,6 +3,12 @@ import { CheckoutForm } from '@/components/shared/checkout-form'
 import { MainWrapper } from '@/components/shared/main-wrapper'
 import { IMAGES } from '@/lib/constants/paths'
 
+export const metadata = {
+  title: 'Checkout',
+  description:
+    'Último paso para confirmar tu reservación, puedes realizar el pago en el directamente en el siguiente formulario.',
+}
+
 export default function CheckoutPage() {
   return (
     <MainWrapper>

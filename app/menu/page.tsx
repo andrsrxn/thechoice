@@ -1,9 +1,23 @@
 import { Suspense } from 'react'
 import { MainWrapper } from '@/components/shared/main-wrapper'
 import { MenuTabs } from '@/components/shared/menu-tabs'
+import { IMAGES } from '@/lib/constants/paths'
 
 export const metadata = {
   title: 'Menú',
+  description: 'Menú de The Choice',
+  openGraph: {
+    title: 'Menú',
+    description: 'Menú de The Choice',
+    images: [
+      {
+        url: IMAGES.PRODUCTS.MAIN_PLATES.URL,
+        width: 1200,
+        height: 630,
+        alt: IMAGES.PRODUCTS.MAIN_PLATES.ALT,
+      },
+    ],
+  },
 }
 
 export default function MenuPage() {

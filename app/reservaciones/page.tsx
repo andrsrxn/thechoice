@@ -6,7 +6,22 @@ import { ReservationsForm } from '@/components/shared/reservations-form'
 import { IMAGES } from '@/lib/constants/paths'
 
 export const metadata = {
-  title: 'Menú',
+  title: 'Reservaciones',
+  description:
+    'Reserva tu experiencia en The Choice Guatemala, el mejor restaurante coreano con platillos auténticos y un ambiente único.',
+  openGraph: {
+    title: 'Reservaciones',
+    description:
+      'Reserva tu experiencia en The Choice Guatemala, el mejor restaurante coreano con platillos auténticos y un ambiente único.',
+    images: [
+      {
+        url: IMAGES.PRODUCTS.SECONDARY_PLATES.URL,
+        width: 1200,
+        height: 630,
+        alt: IMAGES.PRODUCTS.SECONDARY_PLATES.ALT,
+      },
+    ],
+  },
 }
 
 export default function MenuPage() {

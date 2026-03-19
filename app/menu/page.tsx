@@ -1,3 +1,4 @@
+import { Suspense } from 'react'
 import { MainWrapper } from '@/components/shared/main-wrapper'
 import { MenuTabs } from '@/components/shared/menu-tabs'
 
@@ -21,7 +22,9 @@ export default function MenuPage() {
       </section>
       <section className='pb-12 laptop:pb-20'>
         <div className='container mx-auto w-11/12 gap-2'>
-          <MenuTabs />
+          <Suspense>
+            <MenuTabs />
+          </Suspense>
         </div>
       </section>
     </MainWrapper>

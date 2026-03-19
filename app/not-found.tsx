@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Badge } from '@/components/ui/badge'
 
 export const metadata = {
-  title: '404 - Página no encontrada',
+  title: 'Página no encontrada',
   description: 'La página que buscas no existe o fue eliminada.',
 }
 

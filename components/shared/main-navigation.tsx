@@ -42,7 +42,7 @@ export const MainNavigation = ({ open: _open = false }: { open?: boolean }) => {
             <ul className='contents'>
               <li
                 className={cn(
-                  'flex w-full scale-95 items-center border-b opacity-0 duration-150 ease-in-out laptop:w-fit laptop:scale-100 laptop:border-0 laptop:opacity-100',
+                  'flex w-full scale-92 items-center border-b opacity-0 transition-[scale,opacity] duration-150 ease-in-out laptop:w-fit laptop:scale-100 laptop:border-0 laptop:opacity-100',
                   open && 'scale-100 opacity-100 delay-50'
                 )}>
                 <Link
@@ -55,7 +55,7 @@ export const MainNavigation = ({ open: _open = false }: { open?: boolean }) => {
               </li>
               <li
                 className={cn(
-                  'flex w-full scale-95 items-center border-b opacity-0 duration-150 ease-in-out laptop:w-fit laptop:scale-100 laptop:border-0 laptop:opacity-100',
+                  'flex w-full scale-92 items-center border-b opacity-0 transition-[scale,opacity] duration-150 ease-in-out laptop:w-fit laptop:scale-100 laptop:border-0 laptop:opacity-100',
                   open && 'scale-100 opacity-100 delay-100'
                 )}>
                 <Link
@@ -68,7 +68,7 @@ export const MainNavigation = ({ open: _open = false }: { open?: boolean }) => {
               </li>
               <li
                 className={cn(
-                  'flex w-full scale-95 items-center border-b opacity-0 duration-150 ease-in-out laptop:w-fit laptop:scale-100 laptop:border-0 laptop:opacity-100',
+                  'flex w-full scale-92 items-center border-b opacity-0 transition-[scale,opacity] duration-150 ease-in-out laptop:w-fit laptop:scale-100 laptop:border-0 laptop:opacity-100',
                   open && 'scale-100 opacity-100 delay-150'
                 )}>
                 <Link
@@ -86,7 +86,7 @@ export const MainNavigation = ({ open: _open = false }: { open?: boolean }) => {
             <ul className='contents'>
               <li
                 className={cn(
-                  'flex w-full scale-95 items-center border-b opacity-0 duration-150 ease-in-out laptop:-mr-2 laptop:w-fit laptop:scale-100 laptop:border-0 laptop:opacity-100',
+                  'flex w-full scale-92 items-center border-b opacity-0 transition-[scale,opacity] duration-150 ease-in-out laptop:-mr-2 laptop:w-fit laptop:scale-100 laptop:border-0 laptop:opacity-100',
                   open && 'scale-100 opacity-100 delay-200'
                 )}>
                 <Link
@@ -99,7 +99,7 @@ export const MainNavigation = ({ open: _open = false }: { open?: boolean }) => {
               </li>
               <li
                 className={cn(
-                  'flex w-full scale-95 items-center opacity-0 duration-150 ease-in-out laptop:w-fit laptop:scale-100 laptop:border-0 laptop:opacity-100',
+                  'flex w-full scale-92 items-center opacity-0 transition-[scale,opacity] duration-150 ease-in-out laptop:w-fit laptop:scale-100 laptop:border-0 laptop:opacity-100',
                   open && 'scale-100 opacity-100 delay-250'
                 )}>
                 <Link

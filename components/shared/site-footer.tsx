@@ -148,7 +148,7 @@ export const SiteFooter = () => {
                   <Link
                     prefetch={false}
                     className='text-muted-foreground hover:underline hover:decoration-1 tablet:text-sm'
-                    href='/'>
+                    href='/politica-de-privacidad'>
                     Privacidad
                   </Link>
                 </li>
@@ -156,8 +156,8 @@ export const SiteFooter = () => {
                   <Link
                     prefetch={false}
                     className='text-muted-foreground hover:underline hover:decoration-1 tablet:text-sm'
-                    href='/menu'>
-                    Términos de uso
+                    href='/terminos-y-condiciones'>
+                    Términos y condiciones
                   </Link>
                 </li>
               </ul>
@@ -169,11 +169,11 @@ export const SiteFooter = () => {
         <img
           src={IMAGES.WEB.WEB_SIGNATURE.PNG.URL}
           alt={IMAGES.WEB.WEB_SIGNATURE.PNG.ALT}
-          className='object-t h-7 w-full animate-pulse object-cover repeat-infinite tablet:h-9'
+          className='object-t h-9 w-full animate-pulse object-cover repeat-infinite'
           decoding='async'
           loading='lazy'
         />
-        <p className='absolute top-1/2 left-0 h-auto w-full -translate-y-1/2 px-6 text-center text-xs leading-none font-light text-white tablet:text-sm'>
+        <p className='absolute top-1/2 left-0 h-auto w-full -translate-y-1/2 px-6 text-center text-sm leading-none font-light text-white tablet:text-sm'>
           Desarrollado por{' '}
           <a
             className='font-medium underline decoration-1'

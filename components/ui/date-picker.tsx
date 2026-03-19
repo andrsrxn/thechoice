@@ -32,16 +32,16 @@ export const DatePicker = ({
         <Button
           data-empty={!date}
           className={cn(
-            'w-full justify-between border border-input bg-input/50 px-2 text-left text-sm font-normal text-foreground shadow-none hover:bg-input/80 active:bg-input/80 data-[empty=true]:text-muted-foreground',
+            'w-full justify-between border border-input bg-input/50 px-2 text-left text-sm font-normal text-foreground shadow-none hover:bg-input/80 active:scale-100 active:bg-input/80 data-[empty=true]:text-muted-foreground',
             className
           )}>
           {date ? format(date, 'PPP', { locale: es }) : <span>{placeholder}</span>}
           <CalendarIcon />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className='w-70 p-0' align='end'>
+      <PopoverContent className='h-full w-70 p-0' align='end'>
         <Calendar
-          className='w-full'
+          className='size-full'
           mode='single'
           selected={date}
           defaultMonth={date}

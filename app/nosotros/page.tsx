@@ -1,3 +1,4 @@
+import { preload } from 'react-dom'
 import { CounterAnimation } from '@/components/shared/counter-animation'
 import { InView } from '@/components/shared/in-view'
 import { MainWrapper } from '@/components/shared/main-wrapper'
@@ -24,6 +25,11 @@ export const metadata = {
 }
 
 export default function MenuPage() {
+  preload(IMAGES.PEOPLE.TEAM.URL, {
+    as: 'image',
+    fetchPriority: 'high',
+    referrerPolicy: 'strict-origin-when-cross-origin',
+  })
   return (
     <MainWrapper>
       <section className='mt-16 pt-12 pb-4'>

@@ -2,15 +2,15 @@
 
 import { ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
-import { useSearchParams } from 'next/navigation'
+import { redirect, useSearchParams } from 'next/navigation'
 import { Card, CardContent } from '@/components/ui/card'
 import { IMAGES } from '@/lib/constants/paths'
 
 export const SuccessForm = () => {
   const id = useSearchParams().get('id')
 
-  if (!id) {
-    return null
+  if (!id || id !== 'D1VLAPO80FG') {
+    redirect('/reservaciones')
   }
 
   return (

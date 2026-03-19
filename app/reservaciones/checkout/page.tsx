@@ -1,3 +1,4 @@
+import { Suspense } from 'react'
 import { CheckoutForm } from '@/components/shared/checkout-form'
 import { MainWrapper } from '@/components/shared/main-wrapper'
 import { IMAGES } from '@/lib/constants/paths'
@@ -27,7 +28,9 @@ export default function CheckoutPage() {
           </p>
         </div>
         <div className='relative container mx-auto mt-8 w-11/12 max-w-2xl animate-fade-in-up animate-duration-500 animate-ease-in-out laptop:max-w-3xl'>
-          <CheckoutForm />
+          <Suspense>
+            <CheckoutForm />
+          </Suspense>
         </div>
       </section>
     </MainWrapper>

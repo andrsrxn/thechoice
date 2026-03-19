@@ -37,7 +37,7 @@ export const SiteFooter = () => {
         </section>
       )}
       <div className='container mx-auto w-11/12 py-12'>
-        <div className='grid grid-cols-1 gap-6 laptop:grid-cols-2 laptop:gap-0'>
+        <div className='grid grid-cols-1 gap-6 laptop:grid-cols-3 laptop:gap-0'>
           <div className='relative border-b pb-6 laptop:w-fit laptop:border-0 laptop:p-0'>
             <img
               src={IMAGES.BRAND.LOGO.PNG.URL}
@@ -80,7 +80,7 @@ export const SiteFooter = () => {
               </Button>
             </div>
           </div>
-          <div className='border-b pb-6 laptop:flex laptop:items-end laptop:justify-end laptop:border-0 laptop:p-0'>
+          <div className='border-b pb-6 laptop:col-span-2 laptop:flex laptop:items-end laptop:justify-end laptop:border-0 laptop:p-0'>
             <nav>
               <ul className='grid grid-cols-2 gap-4 tablet:flex tablet:justify-between laptop:w-full laptop:gap-8'>
                 <li>
@@ -134,7 +134,7 @@ export const SiteFooter = () => {
               </ul>
             </nav>
           </div>
-          <div className='flex flex-col gap-4 tablet:flex-row tablet:justify-between laptop:col-span-2 laptop:mt-8 laptop:border-t laptop:pt-8'>
+          <div className='flex flex-col gap-4 tablet:flex-row tablet:justify-between laptop:col-span-3 laptop:mt-8 laptop:border-t laptop:pt-8'>
             <div>
               <p className='text-sm text-muted-foreground'>
                 &copy; {new Date().getFullYear()} {COMPANY.NAME}. Todos los derechos reservados.
@@ -163,11 +163,11 @@ export const SiteFooter = () => {
           </div>
         </div>
       </div>
-      <div className='relative'>
+      <div className='relative bg-blue-950'>
         <img
           src={IMAGES.WEB.WEB_SIGNATURE.PNG.URL}
           alt={IMAGES.WEB.WEB_SIGNATURE.PNG.ALT}
-          className='h-7 w-full object-cover object-top tablet:h-9'
+          className='object-t h-7 w-full animate-pulse object-cover repeat-infinite tablet:h-9'
           decoding='async'
           loading='lazy'
         />

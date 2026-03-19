@@ -1,4 +1,5 @@
 import { CakeIcon, CarIcon, PawPrintIcon } from 'lucide-react'
+import { Suspense } from 'react'
 import { preload } from 'react-dom'
 import { MainWrapper } from '@/components/shared/main-wrapper'
 import { ReservationsForm } from '@/components/shared/reservations-form'
@@ -38,7 +39,9 @@ export default function MenuPage() {
           </p>
         </div>
         <div className='relative container mx-auto mt-8 w-11/12 max-w-2xl animate-fade-in-up animate-duration-500 animate-ease-in-out'>
-          <ReservationsForm />
+          <Suspense>
+            <ReservationsForm />
+          </Suspense>
         </div>
       </section>
       <section className='pt-6 pb-20'>

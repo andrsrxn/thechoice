@@ -1,15 +1,9 @@
-'use client'
-
-import { redirect, useSearchParams } from 'next/navigation'
+import { Suspense } from 'react'
 import { MainWrapper } from '@/components/shared/main-wrapper'
 import { SuccessForm } from '@/components/shared/success-form'
 import { IMAGES } from '@/lib/constants/paths'
 
 export default function CompletedPage() {
-  const searchParams = useSearchParams()
-  if (searchParams.get('id') !== 'D1VLAPO80FG') {
-    redirect('/reservaciones')
-  }
   return (
     <MainWrapper>
       <section className='pb-12'>
@@ -34,7 +28,9 @@ export default function CompletedPage() {
           </p>
         </div>
         <div className='relative container mx-auto mt-8 w-auto animate-fade-in-up animate-duration-500 animate-ease-in-out'>
-          <SuccessForm />
+          <Suspense>
+            <SuccessForm />
+          </Suspense>
         </div>
       </section>
     </MainWrapper>

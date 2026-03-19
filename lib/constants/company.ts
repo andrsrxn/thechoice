@@ -16,12 +16,12 @@ export const COMPANY = {
     INSTAGRAM: {
       LABEL: 'Instagram',
       USER: '@thechoicegt',
-      URL: 'https://www.instagram.com/thechoicegt',
+      URL: 'https://www.instagram.com/thechoice.gt',
     },
     FACEBOOK: {
       LABEL: 'Facebook',
       USER: '@thechoicegt',
-      URL: 'https://www.facebook.com/@thechoicegt',
+      URL: 'https://www.facebook.com/p/The-Choice-Guatemala-100075998806315/?locale=es_LA',
     },
     THREADS: {
       LABEL: 'Threads',

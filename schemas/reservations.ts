@@ -46,10 +46,18 @@ export const reservationsSchema = z
       ),
   })
   .superRefine((data, ctx) => {
+    console.log(data.time)
+    console.log(
+      new Date().toLocaleTimeString('es-GT', {
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false,
+      })
+    )
     if (
       data.date.toDateString() === new Date().toDateString() &&
-      data.time >
-        data.date.toLocaleTimeString('es-GT', {
+      data.time <
+        new Date().toLocaleTimeString('es-GT', {
           hour: '2-digit',
           minute: '2-digit',
           hour12: false,

@@ -38,12 +38,12 @@ export const SiteFooter = () => {
       )}
       <div className='container mx-auto w-11/12 py-12'>
         <div className='grid grid-cols-1 gap-6 laptop:grid-cols-3 laptop:gap-0'>
-          <div className='relative flex justify-between border-b pb-6 laptop:w-fit laptop:flex-col laptop:border-0 laptop:p-0'>
-            <div>
+          <div className='relative flex w-full justify-between border-b pb-6 laptop:w-fit laptop:flex-col laptop:border-0 laptop:p-0'>
+            <div className='w-fit'>
               <img
                 src={IMAGES.BRAND.LOGO.PNG.URL}
                 alt={IMAGES.BRAND.LOGO.PNG.ALT}
-                className='h-9 w-fit'
+                className='h-9 w-auto'
               />
             </div>
             <div className='flex h-full w-fit items-start justify-center gap-2 tablet:gap-3 laptop:relative laptop:mt-4 laptop:w-full laptop:justify-start'>

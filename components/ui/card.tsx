@@ -31,10 +31,18 @@ function CardHeader({ className, ...props }: React.ComponentProps<'div'>) {
   )
 }
 
-function CardTitle({ className, children, ...props }: React.ComponentProps<'div'>) {
+function CardTitle({
+  className,
+  children,
+  as = 'h4',
+  ...props
+}: React.ComponentProps<'div'> & { as?: 'h3' | 'h4' }) {
+  const Component = as
   return (
     <div data-slot='card-title' {...props}>
-      <h4 className={cn('font-heading text-2xl text-primary', className)}>{children}</h4>
+      <Component className={cn('font-heading text-2xl text-primary', className)}>
+        {children}
+      </Component>
     </div>
   )
 }

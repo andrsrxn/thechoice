@@ -225,7 +225,10 @@ export const ReservationsForm = () => {
                     <FieldLabel htmlFor='form-date'>Fecha</FieldLabel>
                     <DatePicker
                       value={field.value}
-                      onChange={field.onChange}
+                      onChange={date => {
+                        field.onChange(date)
+                        form.setValue('time', '')
+                      }}
                       disabled={pending}
                       aria-invalid={fieldState.invalid}
                     />

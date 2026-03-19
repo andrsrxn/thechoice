@@ -45,7 +45,7 @@ export const SiteFooter = () => {
               className='h-9 w-fit'
             />
             <div className='absolute top-1/2 right-0 flex h-full w-fit -translate-y-1/2 items-start justify-center gap-2 tablet:gap-3 laptop:relative laptop:top-0 laptop:right-0 laptop:mt-4 laptop:w-full laptop:translate-y-0 laptop:justify-start'>
-              <Button size={'icon-lg'} variant='ghost'>
+              <Button size={'icon-lg'} className='size-10' variant='ghost'>
                 <Link
                   prefetch={false}
                   href={COMPANY.SOCIAL_MEDIA.FACEBOOK.URL}
@@ -56,7 +56,7 @@ export const SiteFooter = () => {
                   <Facebook className='size-6' />
                 </Link>
               </Button>
-              <Button size={'icon-lg'} variant='ghost'>
+              <Button size={'icon-lg'} className='size-10' variant='ghost'>
                 <Link
                   prefetch={false}
                   href={COMPANY.SOCIAL_MEDIA.INSTAGRAM.URL}
@@ -67,7 +67,7 @@ export const SiteFooter = () => {
                   <Instagram className='size-6' />
                 </Link>
               </Button>
-              <Button size={'icon-lg'} variant='ghost'>
+              <Button size={'icon-lg'} className='size-10' variant='ghost'>
                 <Link
                   prefetch={false}
                   href={COMPANY.SOCIAL_MEDIA.THREADS.URL}
@@ -136,7 +136,7 @@ export const SiteFooter = () => {
           </div>
           <div className='flex flex-col gap-4 tablet:flex-row tablet:justify-between laptop:col-span-3 laptop:mt-8 laptop:border-t laptop:pt-8'>
             <div>
-              <p className='text-sm text-muted-foreground'>
+              <p className='text-sm'>
                 &copy; {new Date().getFullYear()} {COMPANY.NAME}. Todos los derechos reservados.
               </p>
             </div>
@@ -145,7 +145,7 @@ export const SiteFooter = () => {
                 <li>
                   <Link
                     prefetch={false}
-                    className='text-sm text-muted-foreground hover:underline hover:decoration-1'
+                    className='text-sm hover:underline hover:decoration-1'
                     href='/'>
                     Privacidad
                   </Link>
@@ -153,7 +153,7 @@ export const SiteFooter = () => {
                 <li>
                   <Link
                     prefetch={false}
-                    className='text-sm text-muted-foreground hover:underline hover:decoration-1'
+                    className='text-sm hover:underline hover:decoration-1'
                     href='/menu'>
                     Términos de uso
                   </Link>

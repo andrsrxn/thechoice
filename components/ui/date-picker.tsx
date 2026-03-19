@@ -39,9 +39,9 @@ export const DatePicker = ({
           <CalendarIcon />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className='h-full w-70 p-0' align='end'>
+      <PopoverContent className='w-76 p-0 laptop:w-70' align='end'>
         <Calendar
-          className='size-full'
+          className='size-full shrink-0'
           mode='single'
           selected={date}
           defaultMonth={date}

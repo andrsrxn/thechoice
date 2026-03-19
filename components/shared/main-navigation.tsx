@@ -22,11 +22,11 @@ export const MainNavigation = ({ open: _open = false }: { open?: boolean }) => {
         size='icon-lg'
         aria-label='Menu'
         variant='ghost'
-        className='laptop:hidden'>
+        className='group laptop:hidden'>
         {open ? (
-          <X className='size-5 animate-in text-white duration-200 ease-in-out zoom-in-60' />
+          <X className='size-5 animate-in text-white duration-200 ease-in-out zoom-in-60 group-hover:text-primary' />
         ) : (
-          <Menu className='size-5 animate-in text-white duration-200 ease-in-out zoom-in-60' />
+          <Menu className='size-5 animate-in text-white duration-200 ease-in-out zoom-in-60 group-hover:text-primary' />
         )}
       </Button>
       <nav

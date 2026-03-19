@@ -16,6 +16,11 @@ export const metadata = {
 }
 
 export default function MenuPage() {
+  const formattedPhoneNumber = `${COMPANY.PHONE_NUMBERS.COUNTRY_CODE} ${COMPANY.PHONE_NUMBERS.MAIN.split(
+    ''
+  )
+    .map((digit, index) => (index % 4 === 0 ? ` ${digit}` : digit))
+    .join('')}`
   return (
     <MainWrapper>
       <section className='mt-16 py-12'>
@@ -45,8 +50,8 @@ export default function MenuPage() {
               <span className='font-semibold'>Número de teléfono</span>
               <a
                 className='w-fit text-primary underline decoration-1'
-                href={`tel:${COMPANY.PHONE_NUMBERS.MAIN}`}>
-                {COMPANY.PHONE_NUMBERS.MAIN}
+                href={`tel:${COMPANY.PHONE_NUMBERS.COUNTRY_CODE}${COMPANY.PHONE_NUMBERS.MAIN}`}>
+                {formattedPhoneNumber}
               </a>
             </div>
             <div className='grid gap-2'>

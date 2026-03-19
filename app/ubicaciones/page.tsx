@@ -54,7 +54,7 @@ export const LocationCard = ({
           />
         </InView>
       </div>
-      <div className='contents laptop:mt-15 laptop:flex laptop:flex-col laptop:gap-5 desktop:mt-18'>
+      <div className='mt-8 contents laptop:mt-15 laptop:flex laptop:flex-col laptop:gap-5 desktop:mt-18'>
         <p className='grid gap-3'>
           <span className='flex items-center gap-2 text-base leading-none desktop:text-lg'>
             <MapPin className='size-4' /> {address1}

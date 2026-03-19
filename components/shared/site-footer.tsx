@@ -69,7 +69,7 @@ export const SiteFooter = () => {
                   <Instagram className='size-6' />
                 </Link>
               </Button>
-              <Button size={'icon-lg'} variant='ghost'>
+              <Button size={'icon-lg'} variant='ghost' asChild>
                 <Link
                   prefetch={false}
                   href={COMPANY.SOCIAL_MEDIA.THREADS.URL}
@@ -138,7 +138,7 @@ export const SiteFooter = () => {
           </div>
           <div className='flex flex-col gap-4 tablet:flex-row tablet:justify-between laptop:col-span-3 laptop:mt-8 laptop:border-t laptop:pt-8'>
             <div>
-              <p className='text-muted-foreground tablet:text-sm'>
+              <p className='tablet:text-sm'>
                 &copy; {new Date().getFullYear()} {COMPANY.NAME}. Todos los derechos reservados.
               </p>
             </div>
@@ -147,7 +147,7 @@ export const SiteFooter = () => {
                 <li>
                   <Link
                     prefetch={false}
-                    className='text-muted-foreground hover:underline hover:decoration-1 tablet:text-sm'
+                    className='hover:underline hover:decoration-1 tablet:text-sm'
                     href='/politica-de-privacidad'>
                     Privacidad
                   </Link>
@@ -155,7 +155,7 @@ export const SiteFooter = () => {
                 <li>
                   <Link
                     prefetch={false}
-                    className='text-muted-foreground hover:underline hover:decoration-1 tablet:text-sm'
+                    className='hover:underline hover:decoration-1 tablet:text-sm'
                     href='/terminos-y-condiciones'>
                     Términos y condiciones
                   </Link>

@@ -38,14 +38,16 @@ export const SiteFooter = () => {
       )}
       <div className='container mx-auto w-11/12 py-12'>
         <div className='grid grid-cols-1 gap-6 laptop:grid-cols-3 laptop:gap-0'>
-          <div className='relative border-b pb-6 laptop:w-fit laptop:border-0 laptop:p-0'>
-            <img
-              src={IMAGES.BRAND.LOGO.PNG.URL}
-              alt={IMAGES.BRAND.LOGO.PNG.ALT}
-              className='h-9 w-fit'
-            />
-            <div className='absolute top-1/2 right-0 flex h-full w-fit -translate-y-1/2 items-start justify-center gap-2 tablet:gap-3 laptop:relative laptop:top-0 laptop:right-0 laptop:mt-4 laptop:w-full laptop:translate-y-0 laptop:justify-start'>
-              <Button size={'icon-lg'} className='size-10' variant='ghost'>
+          <div className='relative flex justify-between border-b pb-6 laptop:w-fit laptop:flex-col laptop:border-0 laptop:p-0'>
+            <div>
+              <img
+                src={IMAGES.BRAND.LOGO.PNG.URL}
+                alt={IMAGES.BRAND.LOGO.PNG.ALT}
+                className='h-9 w-fit'
+              />
+            </div>
+            <div className='flex h-full w-fit items-start justify-center gap-2 tablet:gap-3 laptop:relative laptop:mt-4 laptop:w-full laptop:justify-start'>
+              <Button size={'icon-lg'} variant='ghost' asChild>
                 <Link
                   prefetch={false}
                   href={COMPANY.SOCIAL_MEDIA.FACEBOOK.URL}
@@ -56,7 +58,7 @@ export const SiteFooter = () => {
                   <Facebook className='size-6' />
                 </Link>
               </Button>
-              <Button size={'icon-lg'} className='size-10' variant='ghost'>
+              <Button size={'icon-lg'} variant='ghost' asChild>
                 <Link
                   prefetch={false}
                   href={COMPANY.SOCIAL_MEDIA.INSTAGRAM.URL}
@@ -67,7 +69,7 @@ export const SiteFooter = () => {
                   <Instagram className='size-6' />
                 </Link>
               </Button>
-              <Button size={'icon-lg'} className='size-10' variant='ghost'>
+              <Button size={'icon-lg'} variant='ghost'>
                 <Link
                   prefetch={false}
                   href={COMPANY.SOCIAL_MEDIA.THREADS.URL}
@@ -136,16 +138,16 @@ export const SiteFooter = () => {
           </div>
           <div className='flex flex-col gap-4 tablet:flex-row tablet:justify-between laptop:col-span-3 laptop:mt-8 laptop:border-t laptop:pt-8'>
             <div>
-              <p className='text-sm'>
+              <p className='text-muted-foreground tablet:text-sm'>
                 &copy; {new Date().getFullYear()} {COMPANY.NAME}. Todos los derechos reservados.
               </p>
             </div>
             <nav>
-              <ul className='grid grid-cols-2 gap-4 tablet:flex tablet:items-center tablet:gap-6'>
+              <ul className='mt-2 grid grid-cols-2 gap-4 tablet:mt-0 tablet:flex tablet:items-center tablet:gap-6'>
                 <li>
                   <Link
                     prefetch={false}
-                    className='text-sm hover:underline hover:decoration-1'
+                    className='text-muted-foreground hover:underline hover:decoration-1 tablet:text-sm'
                     href='/'>
                     Privacidad
                   </Link>
@@ -153,7 +155,7 @@ export const SiteFooter = () => {
                 <li>
                   <Link
                     prefetch={false}
-                    className='text-sm hover:underline hover:decoration-1'
+                    className='text-muted-foreground hover:underline hover:decoration-1 tablet:text-sm'
                     href='/menu'>
                     Términos de uso
                   </Link>

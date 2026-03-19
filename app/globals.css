@@ -1,14 +1,10 @@
-@import "tailwindcss";
-@import "tw-animate-css";
-@import "shadcn/tailwind.css";
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+@import 'tailwind-animations';
+@custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --breakpoint-mobile: 480px;
-  --breakpoint-tablet: 768px;
-  --breakpoint-laptop: 1024px;
-  --breakpoint-desktop: 1280px;
-  --breakpoint-display: 1472px;
-  --breakpoint-display-2xl: 1792px;
   --brand-50: oklch(95.913% 0.00333 67.046);
   --brand-100: oklch(91.107% 0.01281 63.703);
   --brand-200: oklch(83.85% 0.02825 67.354);
@@ -23,6 +19,8 @@
   --foreground: oklch(0.141 0.005 285.823);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.141 0.005 285.823);
+  --tooltip: oklch(0.141 0.005 285.823);
+  --tooltip-foreground: oklch(0.985 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.141 0.005 285.823);
   --primary: var(--brand-700);
@@ -35,7 +33,9 @@
   --muted-foreground: oklch(0.552 0.016 285.938);
   --accent: oklch(0.967 0.001 286.375);
   --accent-foreground: oklch(0.21 0.006 285.885);
-  --destructive: #4E1717;
+  --destructive: #993a3a;
+  --success: #C1D6AA;
+  --success-foreground: #2F4E17;
   --border: var(--brand-200);
   --input: var(--brand-100);
   --ring: var(--brand-300);
@@ -55,13 +55,23 @@
 }
 
 @theme inline {
+  --breakpoint-mobile: 480px;
+  --breakpoint-tablet: 768px;
+  --breakpoint-laptop: 1024px;
+  --breakpoint-desktop: 1280px;
+  --breakpoint-display: 1472px;
+  --breakpoint-display-2xl: 1792px;
   --font-heading: var(--font-heading), serif;
   --font-label: var(--font-heading), serif;
   --font-body: var(--font-body), sans-serif;
+  --color-tooltip: var(--tooltip);
+  --color-tooltip-foreground: var(--tooltip-foreground);
   --color-ring: var(--ring);
   --color-input: var(--input);
   --color-border: var(--border);
   --color-destructive: var(--destructive);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
   --color-accent-foreground: var(--accent-foreground);
   --color-accent: var(--accent);
   --color-muted-foreground: var(--muted-foreground);
@@ -116,15 +126,108 @@
     @apply aspect-video;
   }
 
+  *:focus-visible {
+    @apply outline-ring outline-3 outline-offset-2;
+  }
+
   [class*='last:rounded-']:not([class*='last:rounded-full']):not([class*='last:rounded-none']),
   [class*='first:rounded-']:not([class*='first:rounded-full']):not([class*='first:rounded-none']),
   [class*='rounded-']:not([class*='rounded-full']):not([class*='rounded-none']) {
     corner-shape: squircle;
   }
+
+  @keyframes slide-out {
+    from {
+      transform-origin: top;
+      transform: translateX(0) scale(1);
+      opacity: 1;
+    }
+
+    to {
+      transform-origin: top;
+      transform: translateX(-30%) scale(0.98);
+      opacity: 0;
+    }
+  }
+
+  @keyframes slide-in {
+    from {
+      transform: translateX(30%);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes carousel-bg {
+
+    0%,
+    100% {
+      pointer-events: none;
+      opacity: 0;
+    }
+
+    5%,
+    45% {
+      pointer-events: auto;
+      opacity: 1;
+    }
+
+    50%,
+    95% {
+      pointer-events: none;
+      opacity: 0;
+    }
+  }
+
+  @keyframes carousel-fg {
+
+    0%,
+    100% {
+      opacity: 0;
+      pointer-events: none;
+      z-index: 0;
+      transform: translateY(4rem);
+    }
+
+    3.75% {
+      opacity: 0;
+      pointer-events: none;
+      z-index: 0;
+      transform: translateY(4rem);
+    }
+
+    13.75%,
+    45% {
+      z-index: 50;
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(3rem);
+    }
+
+    50%,
+    95% {
+      opacity: 0;
+      pointer-events: none;
+      z-index: 0;
+      transform: translateY(4rem);
+    }
+  }
 }
 
 @utility squircle {
   corner-shape: squircle;
+}
+
+@utility animate-carousel-bg {
+  animation: carousel-bg 8s infinite both;
+}
+
+@utility animate-carousel-fg {
+  animation: carousel-fg 8s infinite both;
 }
 
 @media (prefers-reduced-motion: reduce) {

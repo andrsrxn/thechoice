@@ -5,7 +5,7 @@ export const MainWrapper = ({ className, children, ...props }: ComponentProps<'m
   return (
     <main
       id='contenido-principal'
-      className={cn('container mx-auto w-11/12', className)}
+      className={cn('animate-fade-in animate-duration-500 animate-ease-in-out', className)}
       {...props}>
       {children}
     </main>

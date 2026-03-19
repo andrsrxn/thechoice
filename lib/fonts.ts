@@ -2,10 +2,10 @@ import { Archivo } from 'next/font/google'
 import localFont from 'next/font/local'
 
 export const fontHeading = localFont({
-  src: '../public/fonts/BeautiqueDisplay-Regular.woff2',
+  src: '../public/fonts/BeautiqueDisplay-Bold.woff2',
   variable: '--font-heading',
   display: 'swap',
-  weight: '400',
+  weight: '700',
   style: 'normal',
 })
 

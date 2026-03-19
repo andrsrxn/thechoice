@@ -77,12 +77,16 @@ const nextConfig: NextConfig = {
   },
   poweredByHeader: false,
   experimental: {
+    turbopackFileSystemCacheForDev: false,
+    turbopackFileSystemCacheForBuild: false,
     staleTimes: {
       static: 30,
       dynamic: 60,
     },
+    viewTransition: true,
   },
-  typedRoutes: true,
+
+  typedRoutes: false,
   images: {
     unoptimized: true,
     remotePatterns: [

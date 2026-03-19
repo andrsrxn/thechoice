@@ -254,12 +254,7 @@
             "conventions": [
               {
                 "selector": { "kind": "objectLiteralProperty" },
-                "formats": [
-                  "CONSTANT_CASE",
-                  "camelCase",
-                  "PascalCase",
-                  "snake_case"
-                ]
+                "formats": ["CONSTANT_CASE", "camelCase", "PascalCase", "snake_case"]
               },
               {
                 "selector": { "kind": "functionParameter" },
@@ -347,7 +342,7 @@
         "noDuplicateFields": "error",
         "useGoogleFontDisplay": "error",
         "useStrictMode": "error",
-        "noArrayIndexKey": "error",
+        "noArrayIndexKey": "off",
         "noCommentText": "error",
         "noConfusingVoidType": "error",
         "noDuplicateClassMembers": "error",

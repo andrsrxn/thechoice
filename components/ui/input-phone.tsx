@@ -94,8 +94,7 @@ const CountrySelect = ({
       <PopoverTrigger asChild>
         <Button
           type='button'
-          
-          className='flex gap-1 rounded-s-lg rounded-e-none border-r-0 px-3 squircle focus:z-10'
+          className='flex gap-1 rounded-s-lg rounded-e-none border-r-0 border-none px-3 squircle focus:z-10'
           disabled={disabled}>
           <FlagComponent country={selectedCountry} countryName={selectedCountry} />
           <ChevronsUpDown

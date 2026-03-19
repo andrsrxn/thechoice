@@ -52,7 +52,7 @@ export const SiteFooter = () => {
                   prefetch={false}
                   href={COMPANY.SOCIAL_MEDIA.FACEBOOK.URL}
                   target='_blank'
-                  rel='noopener  noreferrer'
+                  rel='noopener noreferrer'
                   title={COMPANY.SOCIAL_MEDIA.FACEBOOK.LABEL}
                   aria-label={COMPANY.SOCIAL_MEDIA.FACEBOOK.LABEL}>
                   <Facebook className='size-6' />

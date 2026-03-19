@@ -19,6 +19,13 @@ export default function PrivacyPolicyPage() {
           </p>
         </div>
       </section>
+      <section>
+        <div className='container mx-auto flex w-11/12 flex-col items-center gap-2'>
+          <div className='prose prose-invert prose-lg max-w-none'>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
+          </div>
+        </div>
+      </section>
     </MainWrapper>
   )
 }

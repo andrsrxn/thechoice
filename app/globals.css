@@ -142,32 +142,6 @@
     corner-shape: squircle;
   }
 
-  @keyframes slide-out {
-    from {
-      transform-origin: top;
-      transform: translateX(0) scale(1);
-      opacity: 1;
-    }
-
-    to {
-      transform-origin: top;
-      transform: translateX(-30%) scale(0.98);
-      opacity: 0;
-    }
-  }
-
-  @keyframes slide-in {
-    from {
-      transform: translateX(30%);
-      opacity: 0;
-    }
-
-    to {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-
   @keyframes carousel-bg {
 
     0%,
@@ -189,6 +163,7 @@
     }
   }
 
+  /* hidden and not focusable when not shown */
   @keyframes carousel-fg {
 
     0%,
@@ -196,6 +171,7 @@
       opacity: 0;
       pointer-events: none;
       z-index: 0;
+      visibility: hidden;
       transform: translateY(4rem);
     }
 
@@ -203,6 +179,7 @@
       opacity: 0;
       pointer-events: none;
       z-index: 0;
+      visibility: hidden;
       transform: translateY(4rem);
     }
 
@@ -211,6 +188,7 @@
       z-index: 50;
       opacity: 1;
       pointer-events: auto;
+      visibility: visible;
       transform: translateY(3rem);
     }
 
@@ -219,6 +197,7 @@
       opacity: 0;
       pointer-events: none;
       z-index: 0;
+      visibility: hidden;
       transform: translateY(4rem);
     }
   }

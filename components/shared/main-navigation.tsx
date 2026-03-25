@@ -15,7 +15,6 @@ export const MainNavigation = ({ open: _open = false }: { open?: boolean }) => {
     })
   }
   return (
-    // tabindex
     <div className='laptop:w-full'>
       <Button
         onClick={() => setOpen(!open)}

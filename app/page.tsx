@@ -24,8 +24,7 @@ export default function Page() {
   return (
     <MainWrapper>
       <section className='relative overflow-hidden bg-black'>
-        <HeroImages />
-        <div className='absolute top-22 left-[50%] container mx-auto flex h-fit w-11/12 -translate-x-[50%] flex-col items-center gap-4 tablet:top-26 tablet:gap-5 laptop:top-22'>
+        <div className='absolute top-22 left-[50%] z-40 container mx-auto flex h-fit w-11/12 -translate-x-[50%] flex-col items-center gap-4 tablet:top-26 tablet:gap-5 laptop:top-22'>
           <p className='text-center text-xs leading-none font-light tracking-[20%] text-white tablet:text-base'>
             Restaurant & Bakery
           </p>
@@ -45,6 +44,7 @@ export default function Page() {
             </Button>
           </div>
         </div>
+        <HeroImages />
       </section>
       <section className='py-12 desktop:py-16'>
         <div className='container mx-auto flex w-11/12 flex-col items-center gap-2'>

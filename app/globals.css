@@ -2,7 +2,7 @@
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
 @import 'tailwind-animations';
-@plugin "@tailwindcss/typography";
+@plugin '@tailwindcss/typography';
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
@@ -35,8 +35,8 @@
   --accent: oklch(0.967 0.001 286.375);
   --accent-foreground: oklch(0.21 0.006 285.885);
   --destructive: #993a3a;
-  --success: #C1D6AA;
-  --success-foreground: #2F4E17;
+  --success: #c1d6aa;
+  --success-foreground: #2f4e17;
   --border: var(--brand-200);
   --input: var(--brand-100);
   --ring: var(--brand-300);
@@ -120,7 +120,7 @@
   }
 
   body {
-    @apply bg-background text-foreground min-h-dvh;
+    @apply min-h-dvh bg-background text-foreground;
   }
 
   img,
@@ -133,7 +133,7 @@
   }
 
   *:focus-visible {
-    @apply outline-ring outline-3 outline-offset-2;
+    @apply outline-3 outline-offset-2 outline-ring;
   }
 
   [class*='last:rounded-']:not([class*='last:rounded-full']):not([class*='last:rounded-none']),
@@ -143,7 +143,6 @@
   }
 
   @keyframes carousel-bg {
-
     0%,
     100% {
       pointer-events: none;
@@ -165,7 +164,6 @@
 
   /* hidden and not focusable when not shown */
   @keyframes carousel-fg {
-
     0%,
     100% {
       opacity: 0;
@@ -216,7 +214,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-
   *,
   *::after,
   *::before {

@@ -24,7 +24,7 @@ export const metadata = {
   },
 }
 
-export default function MenuPage() {
+export default function ReservationsPage() {
   preload(IMAGES.PRODUCTS.SECONDARY_PLATES.URL, {
     as: 'image',
     fetchPriority: 'high',

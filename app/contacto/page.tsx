@@ -15,7 +15,7 @@ export const metadata = {
     '¿Tienes dudas, sugerencias o quieres hablar con nuestro equipo? ¡Estamos para servirte!',
 }
 
-export default function MenuPage() {
+export default function ContactPage() {
   const formattedPhoneNumber = `${COMPANY.PHONE_NUMBERS.COUNTRY_CODE} ${COMPANY.PHONE_NUMBERS.MAIN.split(
     ''
   )

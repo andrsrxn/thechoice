@@ -39,7 +39,7 @@ export const metadata = {
   },
 }
 
-export default function MenuPage() {
+export default function AboutPage() {
   preload(IMAGES.PEOPLE.TEAM.URL, {
     as: 'image',
     fetchPriority: 'high',
@@ -77,7 +77,7 @@ export default function MenuPage() {
           </div>
         </div>
       </section>
-      {/* counters */}
+
       <section className='py-12'>
         <InView>
           <div className='container mx-auto grid w-11/12 max-w-6xl grid-cols-2 items-center justify-center gap-x-6 gap-y-12 pl-8 tablet:grid-cols-4 tablet:pl-10 laptop:pl-16'>

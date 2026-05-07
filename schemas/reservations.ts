@@ -1,7 +1,7 @@
 // biome-ignore lint/performance/noNamespaceImport: best practice
 import * as z from 'zod'
-import { luhnCheck } from '@/lib/utils'
 import { COMPANY } from '@/lib/constants/company'
+import { luhnCheck } from '@/lib/utils'
 
 export const reservationsSchema = z
   .object({

@@ -19,8 +19,8 @@ import { InputGroup, InputGroupButton, InputGroupInput } from '@/components/ui/i
 import { Separator } from '@/components/ui/separator'
 import { Spinner } from '@/components/ui/spinner'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
-import { checkoutSchema, reservationsSchema } from '@/schemas/reservations'
 import { COMPANY } from '@/lib/constants/company'
+import { checkoutSchema, reservationsSchema } from '@/schemas/reservations'
 
 export const CheckoutForm = () => {
   const [pending, startTransition] = useTransition()

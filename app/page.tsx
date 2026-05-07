@@ -7,8 +7,8 @@ import { MainWrapper } from '@/components/shared/main-wrapper'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { IMAGES } from '@/lib/constants/paths'
 import { COMPANY } from '@/lib/constants/company'
+import { IMAGES } from '@/lib/constants/paths'
 import { cn, slugify } from '@/lib/utils'
 
 export default function Page() {

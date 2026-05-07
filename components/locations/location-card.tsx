@@ -1,10 +1,10 @@
+import type { UrlObject } from 'node:url'
+import { ArrowRight, MapPin } from 'lucide-react'
+import Link from 'next/link'
+import type { ComponentProps } from 'react'
 import { Schedule, ScheduleItem } from '@/components/locations/schedule'
 import { InView } from '@/components/shared/in-view'
 import { cn } from '@/lib/utils'
-import { ArrowRight, MapPin } from 'lucide-react'
-import Link from 'next/link'
-import type { UrlObject } from 'node:url'
-import type { ComponentProps } from 'react'
 
 export const LocationCard = ({
   title,

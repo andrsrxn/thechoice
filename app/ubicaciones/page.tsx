@@ -1,9 +1,9 @@
-import { Separator } from '@/components/ui/separator'
+import { Fragment } from 'react/jsx-runtime'
 import { LocationCard } from '@/components/locations/location-card'
 import { MainWrapper } from '@/components/shared/main-wrapper'
+import { Separator } from '@/components/ui/separator'
 import { COMPANY } from '@/lib/constants/company'
 import { slugify } from '@/lib/utils'
-import { Fragment } from 'react/jsx-runtime'
 
 export const metadata = {
   title: 'Ubicaciones',

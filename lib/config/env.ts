@@ -4,7 +4,7 @@ import 'server-only'
 import { z } from 'zod'
 
 const envSchema = z.object({
-  NODE_ENV: z.enum(['development', 'production', 'test']),
+  NODE_ENV: z.enum(Object.values(NODE_ENV)),
   RESEND_API_KEY: z.string(),
 })
 

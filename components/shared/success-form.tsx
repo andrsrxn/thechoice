@@ -9,6 +9,7 @@ import { IMAGES } from '@/lib/constants/paths'
 export const SuccessForm = () => {
   const id = useSearchParams().get('id')
 
+  // hardcoded for mock up purpose
   if (!id || id !== 'D1VLAPO80FG') {
     redirect('/reservaciones')
   }

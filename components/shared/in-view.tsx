@@ -5,13 +5,9 @@ import { cn } from '@/lib/utils'
 
 interface InViewProps extends ComponentProps<'div'> {
   children: ReactNode
-  /** Indica qué porcentaje del elemento debe estar visible para que se active (0 a 1) */
   threshold?: number
-  /** Clases de Tailwind o CSS que se aplican solo cuando el elemento entra en el viewport */
   inViewClassName?: string
-  /** Si es true, el observer se desconecta una vez que el elemento se muestra, mejorando el rendimiento */
   triggerOnce?: boolean
-  /** Margen adicional para activar la visibilidad antes o después de que entre físicamente al viewport */
   rootMargin?: string
 }
 

@@ -1,3 +1,5 @@
+import { IMAGES } from '@/lib/constants/paths'
+
 export const COMPANY = {
   NIT: '05050505',
   NAME: 'The Choice 더 초이스',
@@ -36,10 +38,79 @@ export const COMPANY = {
   ADDRESSES: {
     MAIN: {
       LOCALITY: 'Santa Lucía Milpas Altas',
+      ADDRESS: 'km 25.5 Carretera a Masagua',
+      COUNTRY: 'Guatemala',
+      MAP_URL: 'https://maps.app.goo.gl/xBJBQ1jMpaqQKSAp6',
+      COUNTRY_CODE: 'GT',
+      DESCRIPTION: [
+        'Nuestro rincón original, donde la montaña es nuestro principal acompañante.',
+        'Reservamos cabañitas que incluye un sauna estilo coreano (seco y húmedo) y un área de masajes.',
+      ],
+      REGION: 'Departamento de Sacatepéquez',
+      POSTAL_CODE: '03006',
+      IMAGE: IMAGES.LOCATIONS.QUETZALTENANGO.URL,
+      IMAGE_ALT: IMAGES.LOCATIONS.QUETZALTENANGO.ALT,
+      PEDIDOS_YA_URL: null,
+      SCHEDULE: [
+        { day: 'Lunes', schedule: '8:30 AM - 6:00 PM' },
+        { day: 'Martes', schedule: 'Cerrado' },
+        { day: 'Miércoles', schedule: '8:30 AM - 6:00 PM' },
+        { day: 'Jueves', schedule: '8:30 AM - 6:00 PM' },
+        { day: 'Viernes', schedule: '8:30 AM - 6:00 PM' },
+        { day: 'Sábado', schedule: '8:00 AM - 6:00 PM' },
+        { day: 'Domingo', schedule: '8:00 AM - 6:00 PM' },
+      ],
+    },
+    EON_PLAZA: {
+      LOCALITY: 'EON Plaza',
+      ADDRESS: '4ta. Avenida, 03-48 zona 10',
       COUNTRY: 'Guatemala',
       COUNTRY_CODE: 'GT',
-      REGION: 'Sacatepéquez',
-      POSTAL_CODE: '03006',
+      DESCRIPTION: [
+        'Nuestra apertura más reciente en el centro de la ciudad.',
+        'Un espacio moderno diseñado para disfrutar de nuestra propuesta de cocina fusión a la carta.',
+      ],
+      MAP_URL: 'https://maps.app.goo.gl/H1B8PcFidAF3soAH8',
+      REGION: 'Ciudad de Guatemala',
+      POSTAL_CODE: '01010',
+      IMAGE: IMAGES.LOCATIONS.Z10.URL,
+      IMAGE_ALT: IMAGES.LOCATIONS.Z10.ALT,
+      PEDIDOS_YA_URL: null,
+      SCHEDULE: [
+        { day: 'Lunes', schedule: '9:00 AM - 6:00 PM' },
+        { day: 'Martes', schedule: 'Cerrado' },
+        { day: 'Miércoles', schedule: '9:00 AM - 6:00 PM' },
+        { day: 'Jueves', schedule: '9:00 AM - 6:00 PM' },
+        { day: 'Viernes', schedule: '9:00 AM - 6:00 PM' },
+        { day: 'Sábado', schedule: '9:00 AM - 4:00 PM' },
+        { day: 'Domingo', schedule: '9:00 AM - 4:00 PM' },
+      ],
+    },
+    MATEO_EXPRESS: {
+      LOCALITY: 'Mateo Express',
+      ADDRESS: 'Calzada Mateo Flores 1-74, Zona 7',
+      COUNTRY: 'Guatemala',
+      COUNTRY_CODE: 'GT',
+      DESCRIPTION: [
+        'Un rincón acogedor donde el aroma a pan recién horneado te da la bienvenida.',
+        'Especialistas en panadería artesanal y delicias coreanas dulces, ideales para llevar o compartir un momento rápido en la zona.',
+      ],
+      MAP_URL: 'https://maps.app.goo.gl/YTpcbD1oPPPeoXdP7',
+      PEDIDOS_YA_URL:
+        'https://www.pedidosya.com.gt/restaurantes/ciudad-de-guatemala/the-choice-bakery-9ff838da-3b84-4f48-bd93-8cdd65e68e70-menu',
+      REGION: 'Ciudad de Guatemala',
+      POSTAL_CODE: '01007',
+      IMAGE: IMAGES.LOCATIONS.Z7.URL,
+      IMAGE_ALT: IMAGES.LOCATIONS.Z7.ALT,
+      SCHEDULE: [
+        { day: 'Lunes', schedule: '9:00 AM - 4:00 PM' },
+        { day: 'Martes', schedule: '9:00 AM - 4:00 PM' },
+        { day: 'Miércoles', schedule: '9:00 AM - 4:00 PM' },
+        { day: 'Jueves', schedule: '9:00 AM - 4:00 PM' },
+        { day: 'Viernes', schedule: '9:00 AM - 4:00 PM' },
+        { day: 'Sábado', schedule: '9:00 AM - 4:00 PM' },
+        { day: 'Domingo', schedule: '9:00 AM - 4:00 PM' },
+      ],
     },
   },
   HISTORY: [

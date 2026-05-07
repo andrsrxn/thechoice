@@ -20,6 +20,7 @@ import { Separator } from '@/components/ui/separator'
 import { Spinner } from '@/components/ui/spinner'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
 import { checkoutSchema, reservationsSchema } from '@/schemas/reservations'
+import { COMPANY } from '@/lib/constants/company'
 
 export const CheckoutForm = () => {
   const [pending, startTransition] = useTransition()
@@ -64,7 +65,7 @@ export const CheckoutForm = () => {
     return null
   }
 
-  const locationType = validateData.data.location === 'Santa Lucía Milpas Altas' ? 100 : 50
+  const locationType = validateData.data.location === COMPANY.ADDRESSES.MAIN.LOCALITY ? 100 : 50
   const total = Number(validateData.data.guests) * 50 + locationType
 
   const formattedDate = format(validateData.data.date, 'EEEE, PPP', { locale: es })

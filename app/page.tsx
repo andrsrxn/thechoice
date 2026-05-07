@@ -8,6 +8,8 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { IMAGES } from '@/lib/constants/paths'
+import { COMPANY } from '@/lib/constants/company'
+import { cn, slugify } from '@/lib/utils'
 
 export default function Page() {
   preload(IMAGES.BACKGROUNDS.NATURE.URL, {
@@ -22,9 +24,9 @@ export default function Page() {
   })
 
   return (
-    <MainWrapper>
+    <MainWrapper animated={false}>
       <section className='relative overflow-hidden bg-black'>
-        <div className='absolute top-22 left-[50%] z-40 container mx-auto flex h-fit w-11/12 -translate-x-[50%] flex-col items-center gap-4 tablet:top-26 tablet:gap-5 laptop:top-22'>
+        <div className='absolute top-22 left-[50%] z-40 container mx-auto flex h-fit w-11/12 -translate-x-[50%] animate-fade-in flex-col items-center gap-4 animate-duration-800 animate-ease-in-out tablet:top-26 tablet:gap-5 laptop:top-22'>
           <p className='text-center text-xs leading-none font-light tracking-[20%] text-white tablet:text-base'>
             Restaurant & Bakery
           </p>
@@ -115,159 +117,63 @@ export default function Page() {
           </p>
         </div>
         <div className='relative mt-8 grid gap-8'>
-          <Card className='sticky top-20 animate-zoom-out animate-range-[40%_100%] timeline-view-block laptop:grid laptop:grid-cols-2 desktop:py-10'>
-            <div className='flex flex-col laptop:pb-1'>
-              <CardHeader className='desktop:px-10'>
-                <CardTitle as='h3' className='tablet:text-3xl desktop:text-4xl'>
-                  Santa Lucía Milpas Altas
-                </CardTitle>
-              </CardHeader>
-              <CardContent className='mt-2 flex h-full flex-col gap-6 desktop:px-10'>
-                <p>
-                  <span className='flex items-center gap-2 text-base desktop:text-lg'>
-                    <MapPin className='size-4' /> Municipio de Sacatepéquez 
-                  </span>
-                  <span className='mt-1 block text-sm text-muted-foreground desktop:text-base'>
-                    5A Calle 3-02, Santa Lucía Milpas Altas
-                  </span>
-                </p>
-                <p className='max-w-prose text-base desktop:text-lg'>
-                  Nuestro rincón original, donde la montaña es nuestro principal acompañante.
-                </p>
-                <p className='max-w-prose text-base desktop:text-lg'>
-                  Reservamos cabañitas que incluye un sauna estilo coreano (seco y húmedo) y un área
-                  de masajes.
-                </p>
-                <div className='flex flex-1 items-center gap-8 laptop:items-end'>
-                  <Link
-                    prefetch={false}
-                    href='/ubicaciones#santa-lucia-milpas-altas'
-                    className='group flex items-center gap-1 text-base leading-none text-primary underline decoration-1 desktop:text-lg'>
-                    Ver Horarios{' '}
-                    <ArrowRight className='size-4 transition-transform duration-200 ease-in-out group-hover:translate-x-1' />
-                  </Link>
-                  <Link
-                    prefetch={false}
-                    href='https://maps.app.goo.gl/xBJBQ1jMpaqQKSAp6'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='group flex items-center gap-1 text-base leading-none text-primary underline decoration-1 desktop:text-lg'>
-                    Ver en Mapa{' '}
-                    <ArrowRight className='size-4 transition-transform duration-200 ease-in-out group-hover:translate-x-1' />
-                  </Link>
-                </div>
+          {Object.values(COMPANY.ADDRESSES).map((location, index) => (
+            <Card
+              key={location.LOCALITY}
+              className={cn(
+                'sticky top-20 laptop:grid laptop:grid-cols-2 desktop:py-10',
+                index !== Object.keys(COMPANY.ADDRESSES).length - 1 &&
+                  'animate-zoom-out animate-range-[40%_100%] timeline-view-block'
+              )}>
+              <div className='flex flex-col laptop:pb-1'>
+                <CardHeader className='desktop:px-10'>
+                  <CardTitle as='h3' className='tablet:text-3xl desktop:text-4xl'>
+                    {location.LOCALITY}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className='mt-2 flex h-full flex-col gap-6 desktop:px-10'>
+                  <p>
+                    <span className='flex items-center gap-2 text-base desktop:text-lg'>
+                      <MapPin className='size-4' /> {location.REGION} 
+                    </span>
+                    <span className='mt-1 block text-sm text-muted-foreground desktop:text-base'>
+                      {location.ADDRESS}
+                    </span>
+                  </p>
+                  {location.DESCRIPTION.map((description, index) => (
+                    <p key={index} className='max-w-prose text-base desktop:text-lg'>
+                      {description}
+                    </p>
+                  ))}
+                  <div className='flex flex-1 items-center gap-8 laptop:items-end'>
+                    <Link
+                      prefetch={false}
+                      href={`/ubicaciones#${slugify(location.LOCALITY)}`}
+                      className='group flex items-center gap-1 text-base leading-none text-primary underline decoration-1 desktop:text-lg'>
+                      Ver Horarios{' '}
+                      <ArrowRight className='size-4 transition-transform duration-200 ease-in-out group-hover:translate-x-1' />
+                    </Link>
+                    <Link
+                      prefetch={false}
+                      href={location.MAP_URL}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className='group flex items-center gap-1 text-base leading-none text-primary underline decoration-1 desktop:text-lg'>
+                      Ver en Mapa{' '}
+                      <ArrowRight className='size-4 transition-transform duration-200 ease-in-out group-hover:translate-x-1' />
+                    </Link>
+                  </div>
+                </CardContent>
+              </div>
+              <CardContent className='mt-6 laptop:mt-0 desktop:px-10'>
+                <img
+                  className='aspect-video bg-accent object-cover laptop:aspect-auto laptop:h-[350px] desktop:h-[400px]'
+                  src={location.IMAGE}
+                  alt={location.IMAGE_ALT}
+                />
               </CardContent>
-            </div>
-            <CardContent className='mt-6 laptop:mt-0 desktop:px-10'>
-              <img
-                className='aspect-video bg-accent object-cover laptop:aspect-auto laptop:h-[350px] desktop:h-[400px]'
-                src={IMAGES.LOCATIONS.QUETZALTENANGO.URL}
-                alt={IMAGES.LOCATIONS.QUETZALTENANGO.ALT}
-              />
-            </CardContent>
-          </Card>
-          <Card className='sticky top-20 animate-zoom-out animate-range-[40%_100%] timeline-view-block laptop:grid laptop:grid-cols-2 desktop:py-10'>
-            <div className='flex flex-col laptop:pb-1'>
-              <CardHeader className='desktop:px-10'>
-                <CardTitle as='h3' className='tablet:text-3xl desktop:text-4xl'>
-                  EON Plaza
-                </CardTitle>
-              </CardHeader>
-              <CardContent className='mt-2 flex h-full flex-col gap-6 desktop:px-10'>
-                <p>
-                  <span className='flex items-center gap-2 text-base desktop:text-lg'>
-                    <MapPin className='size-4' /> Ciudad de Guatemala
-                  </span>
-                  <span className='mt-1 block text-sm text-muted-foreground desktop:text-base'>
-                    4ta. Avenida, 03-48 zona 10
-                  </span>
-                </p>
-                <p className='max-w-prose text-base desktop:text-lg'>
-                  Nuestra apertura más reciente en el centro de la ciudad.{' '}
-                </p>
-                <p className='max-w-prose text-base desktop:text-lg'>
-                  Un espacio moderno diseñado para disfrutar de nuestra propuesta de cocina fusión a
-                  la carta.
-                </p>
-                <div className='flex flex-1 items-center gap-8 laptop:items-end'>
-                  <Link
-                    prefetch={false}
-                    href='/ubicaciones#eon-plaza'
-                    className='group flex items-center gap-1 text-base leading-none text-primary underline decoration-1 desktop:text-lg'>
-                    Ver Horarios{' '}
-                    <ArrowRight className='size-4 transition-transform duration-200 ease-in-out group-hover:translate-x-1' />
-                  </Link>
-                  <Link
-                    prefetch={false}
-                    href='https://maps.app.goo.gl/6LYfYiSL2d6JhGut7'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='group flex items-center gap-1 text-base leading-none text-primary underline decoration-1 desktop:text-lg'>
-                    Ver en Mapa{' '}
-                    <ArrowRight className='size-4 transition-transform duration-200 ease-in-out group-hover:translate-x-1' />
-                  </Link>
-                </div>
-              </CardContent>
-            </div>
-            <CardContent className='mt-6 laptop:mt-0 desktop:px-10'>
-              <img
-                className='aspect-video bg-accent object-cover laptop:aspect-auto laptop:h-[350px] desktop:h-[400px]'
-                src={IMAGES.LOCATIONS.Z10.URL}
-                alt={IMAGES.LOCATIONS.Z10.ALT}
-              />
-            </CardContent>
-          </Card>
-          <Card className='sticky top-20 laptop:grid laptop:grid-cols-2 desktop:py-10'>
-            <div className='flex flex-col laptop:pb-1'>
-              <CardHeader className='desktop:px-10'>
-                <CardTitle as='h3' className='tablet:text-3xl desktop:text-4xl'>
-                  Mateo Express
-                </CardTitle>
-              </CardHeader>
-              <CardContent className='mt-2 flex h-full flex-col gap-6 desktop:px-10'>
-                <p>
-                  <span className='flex items-center gap-2 text-base desktop:text-lg'>
-                    <MapPin className='size-4' /> Ciudad de Guatemala
-                  </span>
-                  <span className='mt-1 block text-sm text-muted-foreground desktop:text-base'>
-                    Calzada Mateo Flores 1-74, Zona 7
-                  </span>
-                </p>
-                <p className='max-w-prose text-base desktop:text-lg'>
-                  Un rincón acogedor donde el aroma a pan recién horneado te da la bienvenida.
-                </p>
-                <p className='max-w-prose text-base desktop:text-lg'>
-                  Especialistas en panadería artesanal y delicias coreanas dulces, ideales para
-                  llevar o compartir un momento rápido en la zona.
-                </p>
-                <div className='flex flex-1 items-center gap-8 laptop:items-end'>
-                  <Link
-                    prefetch={false}
-                    href='/ubicaciones#mateo-express'
-                    className='group flex items-center gap-1 text-base leading-none text-primary underline decoration-1 desktop:text-lg'>
-                    Ver Horarios{' '}
-                    <ArrowRight className='size-4 transition-transform duration-200 ease-in-out group-hover:translate-x-1' />
-                  </Link>
-                  <Link
-                    prefetch={false}
-                    href='https://maps.app.goo.gl/PbqKhxvQNvivGVQZ9'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='group flex items-center gap-1 text-base leading-none text-primary underline decoration-1 desktop:text-lg'>
-                    Ver en Mapa{' '}
-                    <ArrowRight className='size-4 transition-transform duration-200 ease-in-out group-hover:translate-x-1' />
-                  </Link>
-                </div>
-              </CardContent>
-            </div>
-            <CardContent className='mt-6 laptop:mt-0 desktop:px-10'>
-              <img
-                className='aspect-video bg-accent object-cover laptop:aspect-auto laptop:h-[350px] desktop:h-[400px]'
-                src={IMAGES.LOCATIONS.Z7.URL}
-                alt={IMAGES.LOCATIONS.Z7.ALT}
-              />
-            </CardContent>
-          </Card>
+            </Card>
+          ))}
         </div>
       </section>
       <section className='pt-12 pb-8 desktop:pt-16 desktop:pb-12'>

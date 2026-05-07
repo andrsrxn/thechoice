@@ -37,10 +37,10 @@ export default function PrivacyPolicyPage() {
             <h2 className='uppercase'>Información general</h2>
             <p>
               El sitio web {SITE.BASE_URL} es propiedad de y operado por {COMPANY.NAME}, una empresa
-              legalmente constituida en la República de Guatemala, con sede en Santa Lucía Milpas
-              Altas. Nuestro servicio principal consiste en la oferta gastronómica de cocina fusión
-              coreana-internacional y la gestión de experiencias culinarias en nuestras
-              instalaciones.
+              legalmente constituida en la República de Guatemala, con sede en{' '}
+              {COMPANY.ADDRESSES.MAIN.LOCALITY}. Nuestro servicio principal consiste en la oferta
+              gastronómica de cocina fusión coreana-internacional y la gestión de experiencias
+              culinarias en nuestras instalaciones.
             </p>
             <h2 className='uppercase'>Naturaleza de la plataforma (Demo)</h2>
             <p>

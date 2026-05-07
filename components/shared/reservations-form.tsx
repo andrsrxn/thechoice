@@ -58,7 +58,7 @@ export const ReservationsForm = () => {
       lastName: '',
       email: '',
       phone: '',
-      location: 'Santa Lucía Milpas Altas',
+      location: COMPANY.ADDRESSES.MAIN.LOCALITY,
       date: undefined,
       time: '',
       guests: 1,
@@ -69,7 +69,7 @@ export const ReservationsForm = () => {
 
   useEffect(() => {
     setTotal({
-      location: form.getValues('location') === 'Santa Lucía Milpas Altas' ? 100 : 50,
+      location: form.getValues('location') === COMPANY.ADDRESSES.MAIN.LOCALITY ? 100 : 50,
       guests: form.getValues('guests') * 50,
     })
   }, [form.getValues])
@@ -192,7 +192,7 @@ export const ReservationsForm = () => {
                       value={field.value}
                       onValueChange={value => {
                         field.onChange(value)
-                        if (value === 'Santa Lucía Milpas Altas') {
+                        if (value === COMPANY.ADDRESSES.MAIN.LOCALITY) {
                           setTotal(prev => ({ ...prev, location: 100 }))
                           return
                         }
@@ -205,10 +205,12 @@ export const ReservationsForm = () => {
                         <SelectValue placeholder='Selecciona una ubicación' />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value='Santa Lucía Milpas Altas'>
-                          Santa Lucía Milpas Altas
+                        <SelectItem value={COMPANY.ADDRESSES.MAIN.LOCALITY}>
+                          {COMPANY.ADDRESSES.MAIN.LOCALITY}
                         </SelectItem>
-                        <SelectItem value='EON Plaza Zona 10'>EON Plaza Zona 10</SelectItem>
+                        <SelectItem value={COMPANY.ADDRESSES.EON_PLAZA.LOCALITY}>
+                          {COMPANY.ADDRESSES.EON_PLAZA.LOCALITY}
+                        </SelectItem>
                       </SelectContent>
                     </Select>
                     {fieldState.invalid && <FieldError errors={[fieldState.error]} />}

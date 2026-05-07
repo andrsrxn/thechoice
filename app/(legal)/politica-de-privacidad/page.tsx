@@ -19,8 +19,8 @@ export default function PrivacyPolicyPage() {
             Política de Privacidad
           </h1>
           <p className='mt-2 text-base laptop:text-lg'>
-            En <strong>{COMPANY.NAME}</strong>, ubicado en Santa Lucía Milpas Altas, Guatemala,
-            valoramos la confianza que deposita en nosotros al compartir su información.
+            En <strong>{COMPANY.NAME}</strong>, ubicado en {COMPANY.ADDRESSES.MAIN.LOCALITY},
+            Guatemala, valoramos la confianza que deposita en nosotros al compartir su información.
           </p>
           <p className='text-base laptop:text-lg'>
             Esta Política de Privacidad describe cómo recopilamos, utilizamos y protegemos sus datos

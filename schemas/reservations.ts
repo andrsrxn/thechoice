@@ -1,6 +1,7 @@
 // biome-ignore lint/performance/noNamespaceImport: best practice
 import * as z from 'zod'
 import { luhnCheck } from '@/lib/utils'
+import { COMPANY } from '@/lib/constants/company'
 
 export const reservationsSchema = z
   .object({
@@ -22,7 +23,7 @@ export const reservationsSchema = z
       .string({ error: 'Debe ser un texto.' })
       .min(6, 'El teléfono debe tener al menos 6 caracteres.')
       .max(100, 'El teléfono debe tener como máximo 100 caracteres.'),
-    location: z.enum(['Santa Lucía Milpas Altas', 'EON Plaza Zona 10'], {
+    location: z.enum([COMPANY.ADDRESSES.MAIN.LOCALITY, COMPANY.ADDRESSES.EON_PLAZA.LOCALITY], {
       error: 'La ubicación no es válida.',
     }),
     date: z

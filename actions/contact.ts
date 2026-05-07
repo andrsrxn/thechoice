@@ -16,7 +16,8 @@ export async function sendContactForm(data: z.infer<typeof contactSchema>) {
 
   const { fullname, email, phone, message } = result.data
 
-  await sleep(2000)
+  // mocking response
+  await sleep(1500)
 
   return {
     success: true,

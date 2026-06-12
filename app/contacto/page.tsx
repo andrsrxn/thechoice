@@ -34,8 +34,8 @@ export default function ContactPage() {
         </div>
       </section>
       <section className='mb-20 max-w-2xl tablet:mx-auto tablet:mt-2 tablet:w-11/12 laptop:mt-0 laptop:max-w-4xl'>
-        <div className='container mx-auto w-11/12 tablet:flex tablet:gap-8 laptop:flex-col'>
-          <div className='grid grid-cols-2 gap-10 tablet:flex tablet:w-[30%] tablet:shrink-0 tablet:flex-col laptop:grid laptop:h-fit laptop:w-full laptop:grid-cols-4 laptop:gap-12 laptop:pl-8'>
+        <div className='container mx-auto w-11/12 tablet:flex tablet:gap-8 laptop:w-full laptop:flex-col'>
+          <div className='grid grid-cols-2 gap-10 tablet:flex tablet:w-[30%] tablet:shrink-0 tablet:flex-col laptop:grid laptop:h-fit laptop:w-full laptop:grid-cols-4 laptop:gap-12'>
             <div className='grid gap-2'>
               <Mail className='size-4 text-primary' />
               <span className='font-semibold'>Correo electrónico</span>

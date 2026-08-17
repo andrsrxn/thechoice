@@ -21,6 +21,7 @@
     "node": "^24",
     "pnpm": "^11"
   },
+  "packageManager": "pnpm@11.20.0",
   "dependencies": {
     "@hookform/resolvers": "5.2.2",
     "class-variance-authority": "0.7.1",

@@ -4,6 +4,8 @@
 
 Case study | Web design and development to make reservations, view menu, and locations.
 
+![Website and mobile view of homepage](https://res.cloudinary.com/dq5nfyajn/image/upload/v1772760247/banner-small_ts8tyl.webp)
+
 ## Tech stack
 
 - Next.js 16
